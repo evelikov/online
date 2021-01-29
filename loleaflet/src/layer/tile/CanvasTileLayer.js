@@ -610,7 +610,13 @@ L.CanvasTileLayer = L.TileLayer.extend({
 		this._syncTileContainerSize();
 
 		// DEBUG: Polyline Test code
-		var pl = new CPolyline(CPointSet.fromPointArray([new CPoint(10, 10), new CPoint(350, 350)]), {color: 'red'});
+		var pset = CPointSet.fromSetArray([
+			CPointSet.fromPointArray([new CPoint(10, 10), new CPoint(250, 250)]),
+			CPointSet.fromPointArray([new CPoint(250, 250), new CPoint(300, 270)]),
+			CPointSet.fromPointArray([new CPoint(250, 250), new CPoint(210, 290)])
+		]);
+
+		var pl = new CPolyline(pset, {color: 'red'});
 		this._canvasOverlay.initPath(pl);
 
 	},
