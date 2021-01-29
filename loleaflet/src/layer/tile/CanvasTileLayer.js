@@ -3,7 +3,7 @@
  * L.CanvasTileLayer is a L.TileLayer with canvas based rendering.
  */
 
-/* global L CanvasSectionContainer CanvasOverlay CPoint CPointSet CPolyline */
+/* global L CanvasSectionContainer CanvasOverlay CPoint CPointSet CPolygon */
 
 L.TileCoordData = L.Class.extend({
 
@@ -611,12 +611,12 @@ L.CanvasTileLayer = L.TileLayer.extend({
 
 		// DEBUG: Polyline Test code
 		var pset = CPointSet.fromSetArray([
-			CPointSet.fromPointArray([new CPoint(10, 10), new CPoint(250, 250)]),
-			CPointSet.fromPointArray([new CPoint(250, 250), new CPoint(300, 270)]),
-			CPointSet.fromPointArray([new CPoint(250, 250), new CPoint(210, 290)])
+			CPointSet.fromPointArray([new CPoint(10, 10), new CPoint(250, 250), new CPoint(200, 120)]),
+			CPointSet.fromPointArray([new CPoint(250, 250), new CPoint(300, 270), new CPoint(270, 300)]),
+			CPointSet.fromPointArray([new CPoint(250, 250), new CPoint(210, 290), new CPoint(230, 280)])
 		]);
 
-		var pl = new CPolyline(pset, {color: 'red'});
+		var pl = new CPolygon(pset, {color: 'red'});
 		this._canvasOverlay.initPath(pl);
 
 	},
