@@ -131,7 +131,7 @@ namespace CLineUtil {
 		}
 	}
 
-	function _getEdgeIntersection(a: CPoint, b: CPoint, code: number, bounds: CBounds, round: boolean): CPoint {
+	export function _getEdgeIntersection(a: CPoint, b: CPoint, code: number, bounds: CBounds, round: boolean): CPoint {
 		var dx = b.x - a.x;
         var dy = b.y - a.y;
 		var min = bounds.min;
@@ -159,7 +159,7 @@ namespace CLineUtil {
 		return new CPoint(x, y, round);
 	}
 
-	function _getBitCode(p: CPoint, bounds: CBounds): number {
+	export function _getBitCode(p: CPoint, bounds: CBounds): number {
 		var code = 0;
 
 		if (p.x < bounds.min.x) { // left
