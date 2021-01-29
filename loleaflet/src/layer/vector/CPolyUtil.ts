@@ -21,7 +21,7 @@ namespace CPolyUtil {
 	* Used to avoid rendering parts of a polygon that are not currently visible.
 	*/
 	export function clipPolygon(points: Array<CPoint>, bounds: CBounds, round: boolean): Array<CPoint> {
-		var clippedPoints: Array<CCodedPoint>;
+		var clippedPoints: Array<CCodedPoint> = [];
 		var edges = [1, 4, 2, 8];
 		var i: number;
 		var j: number;
@@ -31,7 +31,7 @@ namespace CPolyUtil {
 		var len: number;
 		var edge: number;
 		var p: CCodedPoint;
-		var pointsWithCode: Array<CCodedPoint>;
+		var pointsWithCode: Array<CCodedPoint> = [];
 		var lu = CLineUtil;
 
 		for (i = 0, len = points.length; i < len; i++) {
