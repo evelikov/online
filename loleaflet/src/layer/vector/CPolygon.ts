@@ -51,8 +51,6 @@ class CPolygon extends CPolyline {
 
 	clipPoints(paintArea?: CBounds) {
 		if (this.noClip) {
-			// TODO: need some work to get this right and performant, especially in the case of
-			// a poly* spread across multiple split-panes.
 			this.parts = this.rings;
 			return;
 		}
